@@ -1,0 +1,45 @@
+body {
+  font-family: Inter, sans-serif;
+  background: #0B1C2D;
+  color: white;
+  margin: 0;
+}
+
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(#0B1C2D, #142F4C);
+}
+
+.btn-primary {
+  background: #1F6AE1;
+  color: white;
+  padding: .8rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  border: 1px solid #1F6AE1;
+  color: #1F6AE1;
+  padding: .8rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.dashboard, .login-container {
+  padding: 3rem;
+}
+
+.card {
+  background: #142F4C;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #B5C2D3;
+}
