@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>MagicBank University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #070C2A;
+      --blanco: #FFFFFF;
+      --gris: #CFCFD6;
+      --dorado: #D6B15A;
+      --card: #0E143F;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--azul-profundo);
+      color: var(--blanco);
+      line-height: 1.5;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 24px 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 14px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: var(--gris);
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    h2 {
+      color: var(--dorado);
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--gris);
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .card h3 {
+      color: var(--dorado);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--gris);
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--dorado);
+      color: #1A1A1A;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gris);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>MagicBank University</h1>
+  <p>
+    Formación universitaria guiada por Tutores de altísima capacidad.<br>
+    Enseñanza profesional, adaptativa y evaluada bajo estándares reales.
+  </p>
+</header>
+
+<section>
+  <h2>🏛️ Modelo Educativo MagicBank</h2>
+
+  <p>
+    MagicBank University se basa en un modelo exclusivo de
+    <strong>enseñanza multimodal por capas</strong>, diseñado para garantizar
+    comprensión real y dominio progresivo del conocimiento.
+  </p>
+
+  <p>
+    El estudiante <strong>no avanza</strong> al siguiente módulo si no supera la evaluación.
+    Si existen dificultades, el Tutor retrocede automáticamente hasta el punto
+    exacto de bloqueo y explica nuevamente el contenido en un nivel más simple,
+    ajustando lenguaje, ejemplos y ritmo hasta lograr comprensión.
+  </p>
+
+  <p>
+    Este sistema es <strong>propiedad intelectual exclusiva de MagicBank</strong>.
+    Todos los derechos reservados.
+  </p>
+</section>
+
+<section>
+  <h2>🎓 Facultades Universitarias</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🏢 Administración y Negocios</h3>
+      <p>
+        Formación estratégica en gestión, liderazgo, organización y toma de decisiones.
+        El Tutor adapta la enseñanza al nivel real del estudiante.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-administracion-y-negocios/" target="_blank">
+        Ir a la pasarela de pago
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>⚖️ Derecho</h3>
+      <p>
+        Razonamiento jurídico, análisis normativo y casos reales.
+        No habilita ejercicio profesional legal.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/curso-facultad-de-derecho/" target="_blank">
+        Ir a la pasarela de pago
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>📊 Contaduría</h3>
+      <p>
+        Contabilidad, finanzas y análisis económico con criterio profesional.
+        No otorga matrícula contable.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-contaduria/" target="_blank">
+        Ir a la pasarela de pago
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>📈 Marketing</h3>
+      <p>
+        Estrategia comercial, posicionamiento y crecimiento de marca
+        con acompañamiento experto.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-marketing/" target="_blank">
+        Ir a la pasarela de pago
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>💻 Desarrollo de Software</h3>
+      <p>
+        Arquitectura, programación y resolución de problemas reales
+        con tutor especializado.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-desarrollo-de-software/" target="_blank">
+        Ir a la pasarela de pago
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>🧪 Evaluación Profesional Abierta</h2>
+
+  <p>
+    Antes de ingresar a MagicBank University, cualquier persona —profesional o no—
+    puede evaluar su nivel real de conocimiento mediante un examen riguroso.
+  </p>
+
+  <a class="btn" href="https://chatgpt.com/g/g-6946c65239d481918eefe1b9735441ca-evaluador-tutor-pro" target="_blank">
+    Acceder al EvaluadorTutor Pro
+  </a>
+</section>
+
+<footer>
+  <p>
+    © MagicBank University — Enseñanza adaptativa, evaluada y guiada por Tutores de excelencia.
+  </p>
+</footer>
+
+</body>
+</html>
