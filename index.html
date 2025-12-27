@@ -1,202 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Magicbank University · Campus</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>MagicBank University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #F4F6FA;
-  color: #333;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-/* NAV */
-nav {
-  background: #0A1F44;
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: #C9A14A;
-  margin: 0 14px;
-  text-decoration: none;
-  font-weight: bold;
-}
+  <style>
+    :root {
+      --azul-profundo: #070C2A;
+      --blanco: #FFFFFF;
+      --gris: #CFCFD6;
+      --dorado: #D6B15A;
+      --card: #0E143F;
+    }
 
-/* HEADER */
-header {
-  background: linear-gradient(135deg, #0A1F44, #102E6A);
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* SECTIONS */
-section {
-  max-width: 1200px;
-  margin: 70px auto;
-  padding: 0 20px;
-}
-h2 {
-  color: #0A1F44;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--azul-profundo);
+      color: var(--blanco);
+      line-height: 1.5;
+    }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
+    header {
+      text-align: center;
+      padding: 80px 24px 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-/* CARD */
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-.card h3 {
-  color: #0A1F44;
-}
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 14px;
+    }
 
-/* BUTTON */
-.button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 14px 22px;
-  background: #C9A14A;
-  color: #0A1F44;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
+    header p {
+      font-size: 18px;
+      color: var(--gris);
+      max-width: 900px;
+      margin: auto;
+    }
 
-/* FOOTER */
-footer {
-  background: #0A1F44;
-  color: #ccc;
-  text-align: center;
-  padding: 30px;
-  margin-top: 90px;
-}
-</style>
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    h2 {
+      color: var(--dorado);
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--gris);
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .card h3 {
+      color: var(--dorado);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--gris);
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--dorado);
+      color: #1A1A1A;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gris);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#facultades">Facultades</a>
-  <a href="#council">Council</a>
-  <a href="#herramientas">Herramientas</a>
-</nav>
-
-<!-- HEADER -->
 <header>
-  <h1>Magicbank University · Campus</h1>
-  <p>Facultades · Súper Tutores · Council · Herramientas Supreme</p>
+  <h1>MagicBank University</h1>
+  <p>
+    Formación universitaria guiada por Tutores de altísima capacidad.<br>
+    Enseñanza profesional, adaptativa y evaluada bajo estándares reales.
+  </p>
 </header>
 
-<!-- FACULTADES -->
-<section id="facultades">
-  <h2>Facultades y Súper Tutores Magic Pro</h2>
+<section>
+  <h2>🏛️ Modelo Educativo MagicBank</h2>
 
-  <div class="grid">
+  <p>
+    MagicBank University se basa en un modelo exclusivo de
+    <strong>enseñanza multimodal por capas</strong>, diseñado para garantizar
+    comprensión real y dominio progresivo del conocimiento.
+  </p>
+
+  <p>
+    El estudiante <strong>no avanza</strong> al siguiente módulo si no supera la evaluación.
+    Si existen dificultades, el Tutor retrocede automáticamente hasta el punto
+    exacto de bloqueo y explica nuevamente el contenido en un nivel más simple,
+    ajustando lenguaje, ejemplos y ritmo hasta lograr comprensión.
+  </p>
+
+  <p>
+    Este sistema es <strong>propiedad intelectual exclusiva de MagicBank</strong>.
+    Todos los derechos reservados.
+  </p>
+</section>
+
+<section>
+  <h2>🎓 Facultades Universitarias</h2>
+
+  <div class="cards">
 
     <div class="card">
-      <h3>Administración y Negocios</h3>
-      <p>Súper Administrador Magic Tutor Pro · Estrategia y negocios globales.</p>
-      <a class="button" href="https://chatgpt.com/g/g-6934d1a2900c8191ab3aafa382225a65-superadministrador-magic-tutor-pro" target="_blank">
-        Acceder al Súper Tutor
+      <h3>🏢 Administración y Negocios</h3>
+      <p>
+        Formación estratégica en gestión, liderazgo, organización y toma de decisiones.
+        El Tutor adapta la enseñanza al nivel real del estudiante.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-administracion-y-negocios/" target="_blank">
+        Ir a la pasarela de pago
       </a>
     </div>
 
     <div class="card">
-      <h3>Derecho</h3>
-      <p>Abogadus Magic Tutor Pro · Marco jurídico internacional.</p>
-      <a class="button" href="https://chatgpt.com/g/g-69345443f0848191996abc2cf7cc9786-abogadus-magic-tutor-pro" target="_blank">
-        Acceder al Súper Tutor
+      <h3>⚖️ Derecho</h3>
+      <p>
+        Razonamiento jurídico, análisis normativo y casos reales.
+        No habilita ejercicio profesional legal.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/curso-facultad-de-derecho/" target="_blank">
+        Ir a la pasarela de pago
       </a>
     </div>
 
     <div class="card">
-      <h3>Contaduría y Finanzas</h3>
-      <p>SuperContador Magic Tutor Pro · Finanzas y Pensiones Mágicas.</p>
-      <a class="button" href="https://chatgpt.com/g/g-6934af28002481919dd9799d7156869f-supercontador-magic-tutor-pro" target="_blank">
-        Acceder al Súper Tutor
+      <h3>📊 Contaduría</h3>
+      <p>
+        Contabilidad, finanzas y análisis económico con criterio profesional.
+        No otorga matrícula contable.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-contaduria/" target="_blank">
+        Ir a la pasarela de pago
       </a>
     </div>
 
     <div class="card">
-      <h3>Marketing</h3>
-      <p>SuperMarketer Magic Tutor Pro · Crecimiento y posicionamiento.</p>
-      <a class="button" href="https://chatgpt.com/g/g-693703fa8a008191b91730375fcc4d64-supermarketer-magic-tutor-pro" target="_blank">
-        Acceder al Súper Tutor
+      <h3>📈 Marketing</h3>
+      <p>
+        Estrategia comercial, posicionamiento y crecimiento de marca
+        con acompañamiento experto.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-marketing/" target="_blank">
+        Ir a la pasarela de pago
       </a>
     </div>
 
     <div class="card">
-      <h3>Desarrollo de Software</h3>
-      <p>Super Desarrollador Magic Tutor Pro · Tecnología aplicada.</p>
-      <a class="button" href="https://chatgpt.com/g/g-69356a835d888191bf80e11a11e39e2e-super-desarrollador-magic-tutor-pro" target="_blank">
-        Acceder al Súper Tutor
+      <h3>💻 Desarrollo de Software</h3>
+      <p>
+        Arquitectura, programación y resolución de problemas reales
+        con tutor especializado.
+      </p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-desarrollo-de-software/" target="_blank">
+        Ir a la pasarela de pago
       </a>
     </div>
 
   </div>
 </section>
 
-<!-- COUNCIL -->
-<section id="council">
-  <div class="card">
-    <h2>Magicbank Council · Consejo de Sabios</h2>
-    <p>
-      Espacio estratégico donde convergen todos los Súper Tutores Magic Pro
-      para análisis integral, asesoría empresarial y toma de decisiones
-      de alto nivel.
-    </p>
-    <a class="button" href="https://chatgpt.com/g/g-693b0820918c819199d3922ac8bfd57f-magicbank-council" target="_blank">
-      Acceder al Magicbank Council
-    </a>
-  </div>
-</section>
+<section>
+  <h2>🧪 Evaluación Profesional Abierta</h2>
 
-<!-- HERRAMIENTAS -->
-<section id="herramientas">
-  <h2>Herramientas Supreme</h2>
+  <p>
+    Antes de ingresar a MagicBank University, cualquier persona —profesional o no—
+    puede evaluar su nivel real de conocimiento mediante un examen riguroso.
+  </p>
 
-  <div class="grid">
-
-    <div class="card">
-      <h3>SuperTraductor Magic Tutor Pro</h3>
-      <p>
-        Tutor lingüístico de nivel mundial para aprendizaje de idiomas,
-        preparación de viajes y acompañamiento en tiempo real.
-      </p>
-      <a class="button" href="https://chatgpt.com/g/g-6936d30471708191b9ac5f00163d8605-supertraductor-magic-tutor-pro" target="_blank">
-        Acceder al SuperTraductor
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>BienestarTutor Magic Pro</h3>
-      <p>
-        Acompañamiento integral para claridad mental, equilibrio emocional
-        y orientación preventiva.
-      </p>
-      <a class="button" href="https://chatgpt.com/g/g-693e3bb199b881919ad636fff9084249-bienestartutor-pro" target="_blank">
-        Acceder al BienestarTutor
-      </a>
-    </div>
-
-  </div>
+  <a class="btn" href="https://chatgpt.com/g/g-6946c65239d481918eefe1b9735441ca-evaluador-tutor-pro" target="_blank">
+    Acceder al EvaluadorTutor Pro
+  </a>
 </section>
 
 <footer>
-© Magicbank University · Campus Interno
+  <p>
+    © MagicBank University — Enseñanza adaptativa, evaluada y guiada por Tutores de excelencia.
+  </p>
 </footer>
 
 </body>
