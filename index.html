@@ -29,20 +29,66 @@
       line-height: 1.5;
     }
 
+    /* ===== MENÚ CORREGIDO (NO SE SUPERPONE) ===== */
+    .menu-toggle {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 10000;
+      background: rgba(214,177,90,0.25);
+      border: 1px solid rgba(214,177,90,0.6);
+      color: var(--dorado);
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100vh;
+      background: rgba(7,12,42,0.98);
+      padding: 90px 22px 20px;
+      transition: left 0.3s ease;
+      z-index: 9999;
+    }
+
+    .menu.open {
+      left: 0;
+    }
+
+    .menu a {
+      display: block;
+      color: var(--blanco);
+      text-decoration: none;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .menu a:hover {
+      color: var(--dorado);
+    }
+
+    /* ===== CONTENIDO ===== */
+
     header {
       text-align: center;
-      padding: 80px 24px 60px;
+      padding: 110px 24px 60px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     header h1 {
       font-size: 40px;
       margin-bottom: 14px;
+      color: var(--dorado);
     }
 
     header p {
       font-size: 18px;
-      color: var(--gris);
+      color: var(--blanco);
       max-width: 900px;
       margin: auto;
     }
@@ -61,7 +107,7 @@
 
     p {
       font-size: 16px;
-      color: var(--gris);
+      color: var(--blanco);
       margin-bottom: 20px;
     }
 
@@ -87,7 +133,7 @@
 
     .card p {
       font-size: 15px;
-      color: var(--gris);
+      color: var(--blanco);
       margin-bottom: 18px;
     }
 
@@ -107,12 +153,20 @@
       padding: 40px 20px;
       text-align: center;
       font-size: 13px;
-      color: var(--gris);
+      color: var(--blanco);
     }
   </style>
 </head>
 
 <body>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰ Menú</div>
+
+<div class="menu" id="menu">
+  <a href="https://magicbank.org">Inicio</a>
+  <a href="https://academy.magicbank.org/">Academy (Pago)</a>
+  <a href="https://magicbank.org/fabrica-de-tutores-pago.html">Fábrica de Tutores (Pago)</a>
+</div>
 
 <header>
   <h1>MagicBank University</h1>
@@ -134,13 +188,11 @@
   <p>
     El estudiante <strong>no avanza</strong> al siguiente módulo si no supera la evaluación.
     Si existen dificultades, el Tutor retrocede automáticamente hasta el punto
-    exacto de bloqueo y explica nuevamente el contenido en un nivel más simple,
-    ajustando lenguaje, ejemplos y ritmo hasta lograr comprensión.
+    exacto de bloqueo y explica nuevamente el contenido.
   </p>
 
   <p>
     Este sistema es <strong>propiedad intelectual exclusiva de MagicBank</strong>.
-    Todos los derechos reservados.
   </p>
 </section>
 
@@ -151,80 +203,58 @@
 
     <div class="card">
       <h3>🏢 Administración y Negocios</h3>
-      <p>
-        Formación estratégica en gestión, liderazgo, organización y toma de decisiones.
-        El Tutor adapta la enseñanza al nivel real del estudiante.
-      </p>
-      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-administracion-y-negocios/" target="_blank">
-        Ir a la pasarela de pago
-      </a>
+      <p>Formación estratégica en gestión y liderazgo.</p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-administracion-y-negocios/" target="_blank">Ir a la pasarela</a>
     </div>
 
     <div class="card">
       <h3>⚖️ Derecho</h3>
-      <p>
-        Razonamiento jurídico, análisis normativo y casos reales.
-        No habilita ejercicio profesional legal.
-      </p>
-      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/curso-facultad-de-derecho/" target="_blank">
-        Ir a la pasarela de pago
-      </a>
+      <p>Análisis jurídico y razonamiento normativo.</p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/curso-facultad-de-derecho/" target="_blank">Ir a la pasarela</a>
     </div>
 
     <div class="card">
       <h3>📊 Contaduría</h3>
-      <p>
-        Contabilidad, finanzas y análisis económico con criterio profesional.
-        No otorga matrícula contable.
-      </p>
-      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-contaduria/" target="_blank">
-        Ir a la pasarela de pago
-      </a>
+      <p>Finanzas, contabilidad y análisis económico.</p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-contaduria/" target="_blank">Ir a la pasarela</a>
     </div>
 
     <div class="card">
       <h3>📈 Marketing</h3>
-      <p>
-        Estrategia comercial, posicionamiento y crecimiento de marca
-        con acompañamiento experto.
-      </p>
-      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-marketing/" target="_blank">
-        Ir a la pasarela de pago
-      </a>
+      <p>Estrategia comercial y posicionamiento.</p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-marketing/" target="_blank">Ir a la pasarela</a>
     </div>
 
     <div class="card">
       <h3>💻 Desarrollo de Software</h3>
-      <p>
-        Arquitectura, programación y resolución de problemas reales
-        con tutor especializado.
-      </p>
-      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-desarrollo-de-software/" target="_blank">
-        Ir a la pasarela de pago
-      </a>
+      <p>Programación y resolución de problemas reales.</p>
+      <a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-desarrollo-de-software/" target="_blank">Ir a la pasarela</a>
     </div>
 
   </div>
 </section>
 
 <section>
-  <h2>🧪 Evaluación Profesional Abierta</h2>
+  <h2>🧪 Evaluación Profesional</h2>
 
   <p>
-    Antes de ingresar a MagicBank University, cualquier persona —profesional o no—
-    puede evaluar su nivel real de conocimiento mediante un examen riguroso.
+    Evalúa tu nivel real antes de ingresar a la universidad.
   </p>
 
   <a class="btn" href="https://chatgpt.com/g/g-6946c65239d481918eefe1b9735441ca-evaluador-tutor-pro" target="_blank">
-    Acceder al EvaluadorTutor Pro
+    Acceder al Evaluador
   </a>
 </section>
 
 <footer>
-  <p>
-    © MagicBank University — Enseñanza adaptativa, evaluada y guiada por Tutores de excelencia.
-  </p>
+  © MagicBank University — Enseñanza adaptativa, evaluada y guiada por Tutores de excelencia.
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+</script>
 
 </body>
 </html>
