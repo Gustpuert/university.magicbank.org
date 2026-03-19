@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MagicBank University</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body{font-family:Inter,sans-serif;background:#f4f4f8;margin:0}
+
+/* TOP */
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 20px;
+background:#5b4ee6;
+color:white;
+}
+
+.home-btn{
+background:white;
+color:#5b4ee6;
+padding:8px 14px;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+}
+
+/* SEARCH */
+.search{
+background:#fff;
+margin:10px;
+padding:12px;
+border-radius:12px;
+display:flex;
+gap:8px;
+align-items:center;
+}
+
+.search input{border:none;outline:none;width:100%}
+
+/* SUGGESTIONS */
+#suggestions{
+position:absolute;
+top:45px;
+left:0;
+width:100%;
+background:#fff;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+display:none;
+z-index:999;
+}
+.suggestion{padding:10px;cursor:pointer}
+.suggestion:hover{background:#eee}
+
+/* HERO */
+.hero{max-width:1100px;margin:20px auto;border-radius:16px;overflow:hidden}
+.hero img{width:100%}
+
+/* GRID */
+.container{max-width:1100px;margin:auto;padding:20px}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.card{
+background:#fff;
+padding:20px;
+border-radius:14px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.card h3{margin:0 0 10px}
+.card p{font-size:14px;color:#555}
+
+.note{
+font-size:12px;
+color:#777;
+margin-top:10px;
+}
+
+.btn{
+display:block;
+text-align:center;
+background:#5b4ee6;
+color:#fff;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+margin-top:12px;
+}
+
+.es{
+display:block;
+font-size:13px;
+color:#777;
+margin-top:4px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+background:#fff;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP -->
+<div class="top">
+<div><strong>MAGICBANK UNIVERSITY</strong></div>
+<a class="home-btn" href="https://magicbank.org">
+Home
+<span class="es">Inicio</span>
+</a>
+</div>
+
+<!-- SEARCH -->
+<div class="search">
+🔍
+<div style="width:100%;position:relative;">
+<input id="searchInput" placeholder="Search / Buscar: derecho, marketing...">
+<div id="suggestions"></div>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<img src="https://gustpuert.github.io/university.magicbank.org/picture-university.png">
+</div>
+
+<div class="container">
+<div class="grid">
+
+<!-- ADMIN -->
+<div class="card">
+<h3>Business Administration <span class="es">Administración</span></h3>
+<p>
+Learn how to manage, lead and build real businesses.
+<span class="es">Aprende a gestionar, liderar y construir empresas reales.</span>
+</p>
+<div class="note">Access the real tutor after activation.</div>
+<a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-administracion-y-negocios/" target="_blank">
+Activate Tutor<span class="es">Activar Tutor</span>
+</a>
+</div>
+
+<!-- LAW -->
+<div class="card">
+<h3>Law <span class="es">Derecho</span></h3>
+<p>
+Understand legal systems and develop real legal reasoning.
+<span class="es">Comprende el sistema legal y desarrolla razonamiento jurídico.</span>
+</p>
+<a class="btn" href="https://magicbank2.mitiendanube.com/productos/curso-facultad-de-derecho/" target="_blank">
+Activate Tutor<span class="es">Activar Tutor</span>
+</a>
+</div>
+
+<!-- ACCOUNTING -->
+<div class="card">
+<h3>Accounting <span class="es">Contaduría</span></h3>
+<p>
+Master financial analysis and accounting systems.
+<span class="es">Domina análisis financiero y contabilidad.</span>
+</p>
+<a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-contaduria/" target="_blank">
+Activate Tutor<span class="es">Activar Tutor</span>
+</a>
+</div>
+
+<!-- MARKETING -->
+<div class="card">
+<h3>Marketing</h3>
+<p>
+Build strategies and understand market behavior.
+<span class="es">Desarrolla estrategias y comprende el mercado.</span>
+</p>
+<a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-marketing/" target="_blank">
+Activate Tutor<span class="es">Activar Tutor</span>
+</a>
+</div>
+
+<!-- SOFTWARE -->
+<div class="card">
+<h3>Software Development <span class="es">Desarrollo de Software</span></h3>
+<p>
+Learn programming and real-world system development.
+<span class="es">Aprende programación y desarrollo de sistemas.</span>
+</p>
+<a class="btn" href="https://magicbank2.mitiendanube.com/productos/facultad-de-desarrollo-de-software/" target="_blank">
+Activate Tutor<span class="es">Activar Tutor</span>
+</a>
+</div>
+
+</div>
+</div>
+
+<footer>
+<strong>MAGICBANK UNIVERSITY</strong><br>
+Professional education powered by AI
+<span class="es">Educación profesional impulsada por IA</span>
+</footer>
+
+<script>
+function normalize(t){
+return t.toLowerCase()
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"")
+.trim();
+}
+
+/* ================================
+   DATA DESDE BACKEND
+================================ */
+
+let courses = [];
+
+fetch("https://magic-bank-backend-production-713e.up.railway.app/api/catalogo-publico")
+.then(res => res.json())
+.then(data => {
+
+courses = data.map(c => ({
+name: c.nombre,
+keywords: [
+c.nombre.toLowerCase(),
+c.area.toLowerCase()
+],
+url: c.store_url
+}));
+
+})
+.catch(err => console.error("Error catálogo:", err));
+
+/* ================================
+   BÚSQUEDA (TU MISMO ALGORITMO)
+================================ */
+
+const input=document.getElementById("searchInput");
+const suggestions=document.getElementById("suggestions");
+
+input.addEventListener("input",function(){
+
+let value=normalize(this.value);
+suggestions.innerHTML="";
+
+if(value.length<2){
+suggestions.style.display="none";
+return;
+}
+
+let results=courses.map(c=>{
+let score=0;
+
+c.keywords.forEach(k=>{
+if(normalize(k).includes(value)) score+=2;
+if(value.includes(normalize(k))) score+=1;
+});
+
+return {...c,score};
+});
+
+results=results
+.filter(r=>r.score>0)
+.sort((a,b)=>b.score-a.score)
+.slice(0,6);
+
+results.forEach(r=>{
+let div=document.createElement("div");
+div.className="suggestion";
+div.innerText=r.name;
+div.onclick=()=>window.location.href=r.url;
+suggestions.appendChild(div);
+});
+
+suggestions.style.display=results.length?"block":"none";
+
+});
+
+document.addEventListener("click",(e)=>{
+if(!e.target.closest(".search")) suggestions.style.display="none";
+});
+</script>
+
+</body>
+</html>
