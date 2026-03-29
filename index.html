@@ -212,83 +212,125 @@ Professional education powered by AI
 <span class="es">Educación profesional impulsada por IA</span>
 </footer>
 
+<!-- BUSCADOR MAGICBANK -->
 <script>
-function normalize(t){
-return t.toLowerCase()
+
+/* =========================
+NORMALIZADOR (SI NO EXISTE)
+========================= */
+function normalize(text){
+return (text || "")
+.toLowerCase()
 .normalize("NFD")
 .replace(/[\u0300-\u036f]/g,"")
 .trim();
 }
 
-/* ================================
-   DATA DESDE BACKEND
-================================ */
+/* =========================
+SAFE OPEN (SI NO EXISTE)
+========================= */
+function go(url){
+if(!url) return;
+setTimeout(()=>window.open(url,"_blank"),300);
+}
 
-let courses = [];
+/* =========================
+CATÁLOGO (SI NO EXISTE)
+========================= */
+const catalog = [
 
-fetch("https://magic-bank-backend-production-713e.up.railway.app/api/catalogo-publico")
-.then(res => res.json())
-.then(data => {
+{name:"Curso de Inglés", url:"https://magicbank2.mitiendanube.com/productos/curso-avanzado-de-ingles-con-magic-tutor-pro/"},
+{name:"Curso de Francés", url:"https://magicbank2.mitiendanube.com/productos/curso-avanzado-de-frances-con-tutor-ia/"},
+{name:"Curso de Alemán", url:"https://magicbank2.mitiendanube.com/productos/curso-de-aleman/"},
+{name:"Curso de Italiano", url:"https://magicbank2.mitiendanube.com/productos/curso-de-italiano/"},
+{name:"Curso de Portugués", url:"https://magicbank2.mitiendanube.com/productos/curso-de-portugues/"},
+{name:"Curso de Chino", url:"https://magicbank2.mitiendanube.com/productos/curso-de-chino/"},
+{name:"Curso de Español", url:"https://magicbank2.mitiendanube.com/productos/curso-de-espanol-gj55x/"},
 
-courses = data.map(c => ({
-name: c.nombre,
-keywords: [
-c.nombre.toLowerCase(),
-c.area.toLowerCase()
-],
-url: c.store_url
-}));
+{name:"Curso de Cocina Avanzada", url:"https://magicbank2.mitiendanube.com/productos/curso-de-cocina-avanzado-con-tutor-con-ia/"},
+{name:"Curso de Nutrición Inteligente", url:"https://magicbank2.mitiendanube.com/productos/nutricion-inteligente-avanzada-con-tutor-ia/"},
+{name:"Curso de ChatGPT Avanzado", url:"https://magicbank2.mitiendanube.com/productos/curso-profesional-de-chatgpt/"},
+{name:"Curso de Trading Cíclico", url:"https://magicbank2.mitiendanube.com/productos/trading-ciclico-social/"},
+{name:"Curso de Banca Digital", url:"https://magicbank2.mitiendanube.com/productos/magicbank-curso-de-banca-digital1/"},
+{name:"Curso de Artes y Oficios", url:"https://magicbank2.mitiendanube.com/productos/artes-y-oficios-magicbank/"},
+{name:"Curso de Diseño de Interiores", url:"https://magicbank2.mitiendanube.com/productos/curso-diseno-de-interiores-profesional-gj1bk/"},
 
-})
-.catch(err => console.error("Error catálogo:", err));
+{name:"Facultad de Derecho", url:"https://magicbank2.mitiendanube.com/productos/curso-facultad-de-derecho/"},
+{name:"Facultad de Administración y Negocios", url:"https://magicbank2.mitiendanube.com/productos/facultad-de-administracion-y-negocios/"},
+{name:"Facultad de Marketing", url:"https://magicbank2.mitiendanube.com/productos/facultad-de-marketing/"},
+{name:"Facultad de Contaduría", url:"https://magicbank2.mitiendanube.com/productos/facultad-de-contaduria/"},
+{name:"Facultad de Desarrollo de Software", url:"https://magicbank2.mitiendanube.com/productos/facultad-de-desarrollo-de-software/"},
 
-/* ================================
-   BÚSQUEDA (TU MISMO ALGORITMO)
-================================ */
+{name:"Bachillerato MagicBank", url:"https://magicbank2.mitiendanube.com/productos/magicbank-university1/"},
+{name:"Facultad de Música", url:"https://magicbank2.mitiendanube.com/productos/facultad-de-musica-6k2ph/"},
 
-const input=document.getElementById("searchInput");
-const suggestions=document.getElementById("suggestions");
+{name:"TAP Salud", url:"https://magicbank2.mitiendanube.com/productos/tap-salud/"},
+{name:"TAP Derecho", url:"https://magicbank2.mitiendanube.com/productos/tap-derecho/"},
+{name:"TAP Empresas", url:"https://magicbank2.mitiendanube.com/productos/tap-empresas/"},
+{name:"TAP Administración Pública", url:"https://magicbank2.mitiendanube.com/productos/tap-administracion-publica/"},
+{name:"TAP Educación", url:"https://magicbank2.mitiendanube.com/productos/tap-educacion/"},
+{name:"TAP Ingeniería", url:"https://magicbank2.mitiendanube.com/productos/tap-ingenieros/"},
+{name:"TAP Contaduría", url:"https://magicbank2.mitiendanube.com/productos/asistente-profesional-para-contabilidad-b14t5/"}
 
-input.addEventListener("input",function(){
+];
 
-let value=normalize(this.value);
-suggestions.innerHTML="";
+/* =========================
+BUSCADOR
+========================= */
+document.addEventListener("DOMContentLoaded", function(){
 
-if(value.length<2){
-suggestions.style.display="none";
+const input = document.getElementById("searchInput");
+const suggestions = document.getElementById("suggestions");
+
+if(!input || !suggestions) return;
+
+input.addEventListener("input", function(){
+
+const value = normalize(input.value);
+suggestions.innerHTML = "";
+
+if(!value){
+suggestions.style.display = "none";
 return;
 }
 
-let results=courses.map(c=>{
-let score=0;
+const results = catalog.filter(c =>
+normalize(c.name).includes(value)
+);
 
-c.keywords.forEach(k=>{
-if(normalize(k).includes(value)) score+=2;
-if(value.includes(normalize(k))) score+=1;
-});
+if(results.length === 0){
+suggestions.style.display = "none";
+return;
+}
 
-return {...c,score};
-});
+results.slice(0,6).forEach(item => {
 
-results=results
-.filter(r=>r.score>0)
-.sort((a,b)=>b.score-a.score)
-.slice(0,6);
+const div = document.createElement("div");
+div.className = "suggestion";
+div.innerText = item.name;
 
-results.forEach(r=>{
-let div=document.createElement("div");
-div.className="suggestion";
-div.innerText=r.name;
-div.onclick=()=>window.location.href=r.url;
+div.onclick = () => {
+go(item.url);
+input.value = "";
+suggestions.innerHTML = "";
+suggestions.style.display = "none";
+};
+
 suggestions.appendChild(div);
-});
-
-suggestions.style.display=results.length?"block":"none";
 
 });
 
-document.addEventListener("click",(e)=>{
-if(!e.target.closest(".search")) suggestions.style.display="none";
+suggestions.style.display = "block";
+
+});
+
+/* CERRAR */
+document.addEventListener("click", function(e){
+if(!input.contains(e.target)){
+suggestions.style.display = "none";
+}
+});
+
 });
 </script>
 
